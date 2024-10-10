@@ -81,7 +81,7 @@ namespace Domain.Tests
             // Act
             testAccount.AddTransaction(1000M);
             testAccount.AddTransaction(1000M);
-            testAccount.AddTransaction(-1000M);
+            testAccount.SubTransaction(1000M);
             int points = testAccount.RewardPoints;
             // Assert
             Assert.AreEqual(points, 200);
@@ -106,7 +106,7 @@ namespace Domain.Tests
             // Act
             testAccount.AddTransaction(4000M);
             testAccount.AddTransaction(4000M);
-            testAccount.AddTransaction(-1000M);
+            testAccount.SubTransaction(1000M);
             int points = testAccount.RewardPoints;
             // Assert
             Assert.AreEqual(points, 800 + 2 + 800);

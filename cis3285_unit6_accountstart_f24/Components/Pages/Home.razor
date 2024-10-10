@@ -66,6 +66,8 @@
         {
             accountBalance = acctService.GetAccountBalance(selectedAccountName);
             strAccountBalance = accountBalance.ToString();
+
+
         }
         else
         {
@@ -79,7 +81,9 @@
         acctService.Deposit(selectedAccountName, amount);
         accountBalance = acctService.GetAccountBalance(selectedAccountName);
         strAccountBalance = accountBalance.ToString();
+       
         StateHasChanged();
+        strDepositAmount = "";
     }
 
     private void btnWithdraw_Click()
@@ -88,8 +92,11 @@
         acctService.Withdrawal(selectedAccountName, amount);
         accountBalance = acctService.GetAccountBalance(selectedAccountName);
         strAccountBalance = accountBalance.ToString();
+       
         StateHasChanged();
+
     }
+
 
     private void btnAddAccount_Click()
     {
@@ -101,6 +108,7 @@
         accountList = acctService.GetAllAccounts();
 
         newAccountName = string.Empty; // Clear the input field
+     
         StateHasChanged();
 
     }

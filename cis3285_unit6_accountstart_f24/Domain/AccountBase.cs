@@ -43,6 +43,11 @@ namespace Domain
             RewardPoints += CalculateRewardPoints(amount);
             Balance += amount;
         }
+        public void SubTransaction(decimal amount)
+        {
+           // RewardPoints -= CalculateRewardPoints(amount);
+            Balance -= amount;
+        }
 
         public abstract int CalculateRewardPoints(decimal amount);
     }
